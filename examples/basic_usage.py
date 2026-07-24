@@ -10,7 +10,7 @@ def main():
         vocab_size=5000,
         d_model=256,
         block_size=128,
-        feature_dropout=0.2  # Dropout aktif
+        feature_dropout=0.2  
     )
     print(f"Config: d_model={config.d_model}, feature_dropout={config.feature_dropout}")
     print(f"Total Concatenated Dimension: {config.total_concat_dim}")
