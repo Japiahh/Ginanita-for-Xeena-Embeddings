@@ -1,11 +1,11 @@
-<h1><img height="35" src="https://i.imgflip.com/adfqd6.gif"/> Ginanita-for-Xeena-Embeddings <img height="35" src="https://i.imgflip.com/adfqd6.gif"/></h1>
+<h1 align="center"><img height="35" src="https://i.imgflip.com/adfqd6.gif"/> Ginanita-for-Xeena-Embeddings <img height="35" src="https://i.imgflip.com/adfqd6.gif"/></h1>
 Embeddings modul for Xeena : Linguistic Aware Transformers
 
 **Ginanita** is a custom *Multi-Feature Linguistic Injector* designed to be the input embedding layer for Indonesian Language Models.
 
 Instead of just relying on the usual Token Embedding and Positional Embedding you see in standard Transformers, Ginanita injects 6 different linguistic features all at once right into the initial sentence representation.
 
-## The Linguistic Specialists
+<h2> The Linguistic Specialists <img height="35" src="https://i.imgflip.com/adfqd6.gif"/></h2>
 
 Ginanita orchestrates a bunch of embedding "specialists." Each one is named after a character, giving the project a bit of its own personality:
 
@@ -16,7 +16,7 @@ Ginanita orchestrates a bunch of embedding "specialists." Each one is named afte
 5. **Lekha Dependency**: Captures dependency relations between words (like root, subject, object).
 6. **Sentence ID**: Keeps track of whether a word belongs to the first sentence, second sentence, and so on in a sequence.
 
-## Installation
+## Installation <img height="35" src="https://i.imgflip.com/adfqd6.gif"/>
 
 Just clone this repo and install it via pip:
 
@@ -26,7 +26,7 @@ cd Ginanita
 pip install -e .
 ```
 
-## Quick Start
+## Quick Start <img height="35" src="https://i.imgflip.com/adfqd6.gif"/>
 
 Here's a quick example of how you can set up and use Ginanita in your project:
 
@@ -61,7 +61,7 @@ output = injector(**inputs)
 print("Output shape:", output.shape)  
 ```
 
-## Key Features
+## Key Features <img height="35" src="https://i.imgflip.com/adfqd6.gif"/>
 
 - **Feature Dropout**: A special mechanism used during the *training* phase where supporting features (Morphology, Syntax, Dependency) can be randomly "turned off" independently. This forces the model to not rely too heavily on any single feature (the main Token feature is always kept safe).
 - **Concatenation & Projection**: Combines all features into one high-dimensional space and then projects them back down to `d_model` size using a Linear Projection layer.
