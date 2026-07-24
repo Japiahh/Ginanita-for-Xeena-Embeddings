@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ginanita"
+version = "0.1.0"
+authors = [
+  { name="Author Name", email="author@example.com" },
+]
+description = "Multi-Feature Linguistic Injector for Indonesian Language Models"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["ginanita*"]
+
+[project.urls]
+"Homepage" = "https://github.com/username/Ginanita"
+"Bug Tracker" = "https://github.com/username/Ginanita/issues"

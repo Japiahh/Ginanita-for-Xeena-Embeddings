@@ -1,0 +1,49 @@
+{
+  "token_map": {
+    "<PAD>": 0,
+    "<UNK>": 1,
+    "ayo": 2,
+    ",": 3,
+    "duduk": 4,
+    "dan": 5,
+    "berbincang": 6,
+    "denganku": 7,
+    ".": 8,
+    "aku": 9,
+    "ingin": 10,
+    "tahu": 11,
+    "semua": 12,
+    "tentang": 13,
+    "harimu": 14,
+    "hai": 15
+  },
+  "pos_map": {
+    "<PAD>": 0,
+    "<UNK>": 1,
+    "INT-DISC": 2,
+    "SYM-COM": 3,
+    "VB-ACT": 4,
+    "CON-COR": 5,
+    "VB-STAT": 6,
+    "NN-COM": 7,
+    "SYM-DOT": 8,
+    "PRP-PER": 9,
+    "VB-MODL": 10,
+    "DT-QUANT": 11,
+    "IN-COMP": 12,
+    "INT-GREET": 13
+  },
+  "syn_map": {
+    "<PAD>": 0,
+    "<UNK>": 1,
+    "S": 2,
+    "PP": 3,
+    "VP": 4
+  },
+  "dep_map": {
+    "<PAD>": 0,
+    "<UNK>": 1,
+    "root": 2,
+    "punct": 3
+  }
+}

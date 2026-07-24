@@ -1,0 +1,136 @@
+[
+  {
+    "raw_text": "Ayo, duduk dan berbincang denganku...",
+    "token": [
+      "ayo",
+      ",",
+      "duduk",
+      "dan",
+      "berbincang",
+      "denganku",
+      ".",
+      "aku",
+      "ingin",
+      "tahu",
+      "semua",
+      "tentang",
+      "harimu"
+    ],
+    "tagged": [
+      [
+        "ayo",
+        "INT-DISC"
+      ],
+      [
+        ",",
+        "SYM-COM"
+      ],
+      [
+        "duduk",
+        "VB-ACT"
+      ],
+      [
+        "dan",
+        "CON-COR"
+      ],
+      [
+        "berbincang",
+        "VB-STAT"
+      ],
+      [
+        "denganku",
+        "NN-COM"
+      ],
+      [
+        ".",
+        "SYM-DOT"
+      ],
+      [
+        "aku",
+        "PRP-PER"
+      ],
+      [
+        "ingin",
+        "VB-MODL"
+      ],
+      [
+        "tahu",
+        "VB-STAT"
+      ],
+      [
+        "semua",
+        "DT-QUANT"
+      ],
+      [
+        "tentang",
+        "IN-COMP"
+      ],
+      [
+        "harimu",
+        "NN-COM"
+      ]
+    ],
+    "syntax_tree": [
+      "S",
+      [
+        "PP",
+        [
+          "ayo",
+          "INT-DISC"
+        ]
+      ],
+      [
+        "VP",
+        [
+          "duduk",
+          "VB-ACT"
+        ]
+      ]
+    ],
+    "dependency_graph": [
+      {
+        "dependencies": {
+          "root": [
+            "duduk",
+            "VB-ACT"
+          ],
+          "punct": [
+            [
+              ",",
+              "SYM-COM"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "raw_text": "Hai",
+    "token": [
+      "hai"
+    ],
+    "tagged": [
+      [
+        "hai",
+        "INT-GREET"
+      ]
+    ],
+    "syntax_tree": [
+      "S",
+      [
+        "PP",
+        [
+          "hai",
+          "INT-GREET"
+        ]
+      ]
+    ],
+    "dependency_graph": [
+      {
+        "dependencies": {
+          "root": null
+        }
+      }
+    ]
+  }
+]

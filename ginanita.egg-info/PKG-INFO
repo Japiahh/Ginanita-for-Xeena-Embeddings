@@ -1,0 +1,83 @@
+Metadata-Version: 2.4
+Name: ginanita
+Version: 0.1.0
+Summary: Multi-Feature Linguistic Injector for Indonesian Language Models
+Author-email: Author Name <author@example.com>
+Project-URL: Homepage, https://github.com/username/Ginanita
+Project-URL: Bug Tracker, https://github.com/username/Ginanita/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.0
+Dynamic: license-file
+
+# Ginanita
+
+**Ginanita** adalah sebuah *Multi-Feature Linguistic Injector* khusus yang dirancang sebagai input embedding layer untuk model bahasa (Language Model) berbahasa Indonesia.
+
+Alih-alih hanya bergantung pada Token Embedding dan Positional Embedding seperti pada arsitektur Transformer standar, Ginanita menyuntikkan (inject) 6 jenis fitur linguistik sekaligus ke dalam representasi awal kalimat.
+
+## Fitur Linguistik (Tim Spesialis)
+
+Ginanita mengorkestrasikan beberapa "spesialis" embedding yang masing-masing dinamai berdasarkan karakter, memberikan identitas unik pada proyek ini:
+
+1. **Adelina** (Token Embedding): Mengubah token kata menjadi vektor dasar.
+2. **Raya** (Positional Embedding): Mengkodekan urutan kata menggunakan sinusoida (fixed position).
+3. **Elina** (Morphology/POS Embedding): Menangkap informasi kelas kata (Verba, Nomina, dll).
+4. **Lekha Syntactic**: Menyuntikkan label struktur pohon sintaksis (NP, VP) beserta kedalamannya (depth).
+5. **Lekha Dependency**: Menangkap hubungan ketergantungan antar kata (seperti root, subject, object).
+6. **Sentence ID**: Membedakan kalimat pertama, kedua, dst dalam sebuah input sekuens.
+
+## Instalasi
+
+Klon repositori ini lalu install melalui pip:
+
+```bash
+git clone https://github.com/username/Ginanita.git
+cd Ginanita
+pip install -e .
+```
+
+## Penggunaan Cepat
+
+Berikut cara sederhana untuk menginisialisasi dan menggunakan Ginanita dalam proyek Anda:
+
+```python
+import torch
+from ginanita import Ginanita, GinanitaConfig
+
+# 1. Konfigurasi
+config = GinanitaConfig(
+    vocab_size=10000,
+    d_model=512,
+    block_size=256,
+    feature_dropout=0.1  # Aktifkan feature dropout saat training
+)
+
+# 2. Inisialisasi Model
+injector = Ginanita(config)
+
+# 3. Dummy Input (Batch=2, SeqLen=10)
+B, T = 2, 10
+inputs = {
+    'idx': torch.randint(0, config.vocab_size, (B, T)),
+    'pos_ids': torch.randint(0, config.pos_size, (B, T)),
+    'syn_ids': torch.randint(0, config.syn_size, (B, T)),
+    'depth_ids': torch.randint(0, config.max_depth, (B, T)),
+    'dep_ids': torch.randint(0, config.dep_size, (B, T)),
+    'sent_ids': torch.zeros(B, T, dtype=torch.long)
+}
+
+# 4. Forward Pass
+output = injector(**inputs)
+print("Output shape:", output.shape)  # Akan menghasilkan [2, 10, 512]
+```
+
+## Fitur Utama
+
+- **Feature Dropout**: Mekanisme khusus saat fase *training* dimana fitur-fitur pendukung (Morphology, Syntax, Dependency) secara independen dapat "dinonaktifkan" secara acak. Ini memaksa model untuk tidak terlalu bergantung pada satu fitur saja (Token selalu aman).
+- **Concatenation & Projection**: Menggabungkan semua fitur dalam satu ruang dimensi tinggi lalu memproyeksikannya kembali ke `d_model` menggunakan Linear Projection.
