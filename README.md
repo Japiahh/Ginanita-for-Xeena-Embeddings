@@ -1,7 +1,9 @@
 <h1 align="center"><img height="35" src="https://i.imgflip.com/adfqd6.gif"/> Ginanita-for-Xeena-Embeddings <img height="35" src="https://i.imgflip.com/adfqd6.gif"/></h1>
 Embeddings modul for Xeena : Linguistic Aware Transformers
 
-**Ginanita** is a custom *Multi-Feature Linguistic Injector* designed to be the input embedding layer for Indonesian Language Models.
+###
+
+Ginanita is a custom Multi-Feature Linguistic Injector designed to be the input embedding layer for Indonesian Language Models.
 
 Instead of just relying on the usual Token Embedding and Positional Embedding you see in standard Transformers, Ginanita injects 6 different linguistic features all at once right into the initial sentence representation.
 
@@ -66,4 +68,4 @@ print("Output shape:", output.shape)
 - **Feature Dropout**: A special mechanism used during the *training* phase where supporting features (Morphology, Syntax, Dependency) can be randomly "turned off" independently. This forces the model to not rely too heavily on any single feature (the main Token feature is always kept safe).
 - **Concatenation & Projection**: Combines all features into one high-dimensional space and then projects them back down to `d_model` size using a Linear Projection layer.
 
-Start to Risa, thanks Gemie.
+Start from Risa, thanks to Gemie.
