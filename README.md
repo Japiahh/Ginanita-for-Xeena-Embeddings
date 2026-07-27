@@ -68,4 +68,4 @@ print("Output shape:", output.shape)
 - **Feature Dropout**: A special mechanism used during the *training* phase where supporting features (Morphology, Syntax, Dependency) can be randomly "turned off" independently. This forces the model to not rely too heavily on any single feature (the main Token feature is always kept safe).
 - **Concatenation & Projection**: Combines all features into one high-dimensional space and then projects them back down to `d_model` size using a Linear Projection layer.
 
-Start from Risa, thanks to Gemie. absen
+Start from Risa, thanks to Gemie.
