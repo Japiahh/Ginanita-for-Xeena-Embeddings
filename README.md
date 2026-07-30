@@ -69,4 +69,4 @@ print("Output shape:", output.shape)
 - **Concatenation & Projection**: Combines all features into one high-dimensional space and then projects them back down to `d_model` size using a Linear Projection layer.
 
 ---
-Start from Risa, thanks to Gemie
+Start from Risa, thanks to Gemie.
