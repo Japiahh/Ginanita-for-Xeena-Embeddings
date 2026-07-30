@@ -70,3 +70,4 @@ print("Output shape:", output.shape)
 
 ---
 Start from Risa, thanks to Gemie.
+jkk
